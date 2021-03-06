@@ -18,3 +18,29 @@
 */
 
 //NOTE: Write your code below and push back to your github branch.  SUBMIT YOUR GITHUB URL IN CANVAS
+
+//console.log('about to fetch a response body');
+
+fetch('https://rickandmortyapi.com/api/character')
+    .then(function(response){
+            //console.log(response);
+            return response.json();
+    })
+
+    .then(function(json){
+            console.log(json);
+            let people = json.results;
+
+            let characterOne = people[10].image;
+            let characterTwo = people[16].image;
+
+            document.getElementById("imageOne").src = characterOne;
+            document.getElementById("imageTwo").src = characterTwo;
+            
+    });
+
+//console.log('does this appear before or affter the array?');
+
+
+
+
